@@ -12,10 +12,17 @@ public class CliSocket {
 		try {
 			Socket client = new Socket("127.0.0.1",12345);
 			PrintStream saida = new PrintStream(client.getOutputStream());
+			Scanner scanner = new Scanner(client.getInputStream());
+			
 			String linha = "";
 			while ((!linha.toUpperCase().equals("SAIR"))&&(!linha.toUpperCase().equals("FECHAR"))) {
 				linha = teclado.nextLine();
-				saida.println(linha);				
+				//envia
+				saida.println(linha);
+				//Tudo que chegar do server ele vai mostrar
+				System.out.println(scanner.nextLine());
+				
+				
 			}			
 			
 		} catch (IOException e) {
