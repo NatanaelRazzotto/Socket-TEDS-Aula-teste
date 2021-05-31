@@ -13,7 +13,7 @@ public class CliSocket {
 			Socket client = new Socket("127.0.0.1",12345);
 			PrintStream saida = new PrintStream(client.getOutputStream());
 			String linha = "";
-			while (teclado.hasNextLine() || !linha.toUpperCase().equals("SAIR")) {
+			while (!linha.toUpperCase().equals("SAIR")) {
 				linha = teclado.nextLine();
 				saida.println(linha);				
 			}			
