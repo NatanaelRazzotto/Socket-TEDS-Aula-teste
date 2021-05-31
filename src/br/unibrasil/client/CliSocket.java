@@ -10,12 +10,12 @@ public class CliSocket {
 	public void execute() {
 		Scanner teclado = new Scanner(System.in);
 		try {
-			Socket client = new Socket("127.0.0.1", 12345);
+			Socket client = new Socket("127.0.0.1",12345);
 			PrintStream saida = new PrintStream(client.getOutputStream());
 			String linha = "";
 			while (teclado.hasNextLine() || !linha.toUpperCase().equals("SAIR")) {
 				linha = teclado.nextLine();
-				saida.println();				
+				saida.println(linha);				
 			}			
 			
 		} catch (IOException e) {

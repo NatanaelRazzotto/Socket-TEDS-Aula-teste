@@ -16,6 +16,7 @@ public class SrvSocket {
 			String recebido = "";
 			while(!recebido.toUpperCase().equals("SAIR")) {
 				recebido = scanner.nextLine();
+				System.out.println("recebeuMensagem");
 				System.out.println(recebido);				
 			}
 			client.close();
